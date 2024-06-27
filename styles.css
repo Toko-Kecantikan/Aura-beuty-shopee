@@ -1,0 +1,541 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'poppins'sans-serif;
+    background-color: whitesmoke;
+    color: rgb(10, 10, 10);
+    min-height: 3000px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(228, 220, 220, 0.9);
+    border-bottom: 1px solid saddlebrown;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(20, 20, 20);
+}
+.navbar .navbar-logo span{
+    color: rgb(131, 107, 1);
+}
+.navbar .navbar-nav a{
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    color: black;
+
+}
+.navbar .navbar-nav a:hover{
+    color: rgb(131, 107, 1) ;
+}
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid rgb(131, 107, 1) ;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(1);
+}
+.navbar .navbar-extra a{
+    margin: 0 0.5rem;
+    color: black;
+}
+.navbar .navbar-extra a:hover{
+    color: rgb(131, 107, 1) ;
+}
+
+#hamburger-menu{
+    display: none;
+}
+/* nav search */
+.navbar .search-form{
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: white;
+    width: 40rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+}
+.navbar .search-form.active{
+    transform: scaleY(1);
+}
+.navbar .search-form input{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: black;
+}
+.navbar .search-form label{
+    margin-right: 2rem;
+    cursor: pointer;
+}
+/*nav shopping cart */
+.shoping-cart{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    color: white ;
+    background-color: rgba(1, 1, 3, 0.9);
+    transition: 0.3s linear;
+}
+.shoping-cart.active{
+    right: 0;
+}
+.shoping-cart img{
+    height: 6rem;
+    border-radius: 50%;
+    border: 2px solid rgb(131, 107, 1);
+}
+.shoping-cart .cart-item{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgb(131, 107, 1) ;
+    position: relative;
+
+}
+.shoping-cart h3{
+    font-size: 1.6rem;
+    padding-bottom: 0.8rem;
+}
+.shoping-cart .item-harga{
+    font-size: 1.2rem;
+}
+.shoping-cart .delete-item{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+
+}
+.shoping-cart .delete-item:hover{
+    color: rgb(131, 107, 1) ;
+}
+
+/*wrapper */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(img/JUDUL.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+   
+}
+.wrapper::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 28%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(245,245,245,1)8%, rgba(129, 12, 197, 0)55%);
+
+
+}
+.wrapper .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+.wrapper .content h1{
+    font-size: 5em;
+    color: whitesmoke;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
+
+}
+/*.wrapper .content h1 span{
+    color: rgb(131, 107, 1) ;
+
+} */
+.wrapper .content p{
+    font-size: 2rem;
+    margin-top: 1rem;
+   color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgb(255, 244, 244);
+    
+   
+}
+.wrapper .content .tombol{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: white;
+    background-color:  rgb(131, 107, 1)  ;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.1);
+
+}
+.wrapper .content .tombol:hover{
+    color: black;
+}
+
+/*about*/
+
+.about{
+    padding: 8rem 7% 1.4rem;
+}
+.about h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem
+}
+.about .row{
+    display: flex;
+}
+.about .row .about-img{
+    flex: 1 1 45rem;
+}
+.about .row .about-img img{
+    width: 100%;
+}
+.about .row .content{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+.about .row .content h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.about .row .content p{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 200;
+    line-height: 1.5rem;
+}
+
+/*produk*/
+
+.produk{
+    padding: 8rem 7% 1.4rem;
+}
+.produk h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem
+}
+
+.produk p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1.3rem;
+}
+.produk .row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+    
+}
+.produk .row .produk-card{
+    text-align: center;
+    padding-bottom: 2rem;
+    border: 2px solid grey;
+    padding: 2rem;
+}
+.produk .row .produk-icon{
+    display: flex;
+    justify-content: center;
+    gap: 0.rem;
+}
+.produk .produk-icon a{
+    width: 4rem;
+    height: 4rem;
+    color: black;
+    margin: 0.3rem;
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.produk .produk-icon a:hover{
+    background-color: rgb(185, 185, 21)  ;
+    border: 1px solid black  ;
+
+}
+.produk .row .produk-card img{
+    border-radius: 40%;
+    width: 80%;
+    border: 1px solid;
+}
+
+
+.produk .row  .produk-card-title h3{
+    font-size: 2rem;
+
+
+}
+.produk .row .produk-star{
+    font-size: 1.7rem;
+    padding: 0.8rem;
+    color: rgb(131, 107, 1) ;
+}.produk .row .produk-star .full{
+    fill :  rgb(131, 107, 1) ;
+}
+.produk .produk-card-harga{
+font-size: 1.3rem;
+font-weight: bold ;
+}
+.produk .produk-card-harga span{
+    
+    font-size: 1rem;
+    font-weight: lighter;
+    text-decoration:  line-through;
+}
+
+/*kontak */
+.kontak{
+    padding: 8rem 7% 1.4rem;
+}
+.kontak h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem
+}
+.kontak p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+}
+.kontak .row{
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+    
+}
+.kontak .row .maps{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.kontak .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.kontak .row form .input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: #eee;
+    border: 1px solid black;
+    padding-left: 2rem;
+}
+.kontak .row form .input-group input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.2rem;
+    background: none;
+}
+
+.kontak .row form .submit{
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background-color: rgb(131, 107, 1)  ;
+    cursor: pointer;
+}
+
+/* footer */
+footer {
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding :1px;
+    
+}
+footer p {
+	margin: 0;
+}
+
+/* box item */
+.box{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+.box-container{
+    position: relative;
+    background-color: white;
+    color: black;
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid gray;
+    animation: animatebox 0.5s;
+}
+/* box animasi */
+@keyframes animatebox {
+    from {
+        top : -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+    
+}
+.box-container .close-icon{
+    position: absolute;
+    right: 1rem;
+}
+.box-conten{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.box-conten img{
+    height: 13rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+.box-conten p{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 0.9rem;
+}
+.box-conten a{
+    display: flex;
+    gap: 1rem;
+    width: 11rem;
+    margin-top: 0.3rem;
+    padding: 1rem 1.6rem;
+    background-color: rgb(131, 107, 1);
+    color: black;
+}
+
+
+
+
+/* laptop */
+@media (max-width: 1366px){
+    html {
+        font-size: 100%;
+    }
+
+}
+
+
+/* hp*/
+@media (max-width: 450px){
+    html {
+        font-size: 55%;
+    }
+
+}
+
+
+/* tablet */
+@media (max-width: 768px){
+    html {
+        font-size: 65%;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: black;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    
+    }
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    .navbar .navbar-nav a{
+        color: antiquewhite;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.3);
+
+    }
+    .navbar .search-form{
+        width: 80%;
+        right: 2rem;
+    }
+    .about .row{
+        flex-wrap: wrap;
+    }
+    .about .row .about-img img{
+        object-fit: cover;
+        object-position: center;
+    }
+    .about .row .content{
+        padding: 0;
+    }
+    .about .row .content P{
+        font-size: 1.5rem;
+    }
+    .about .row .content{
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .produk p{
+        font-size: 1.2rem;
+    }
+    .kontak .row{
+        flex-wrap: wrap;
+    }
+    .kontak .row .maps{
+        height: 30rem;
+    }
+    .box-conten{
+        flex-wrap: wrap;
+    }
+
+}
